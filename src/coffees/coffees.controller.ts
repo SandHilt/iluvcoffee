@@ -30,16 +30,17 @@ export class CoffeesController {
 
   @Post()
   create(@Body() createCoffeeDto: CreateCoffeeDto) {
-    return this.coffeeService.create(createCoffeeDto);
+    this.coffeeService.create(createCoffeeDto);
+    return createCoffeeDto;
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
-    return this.coffeeService.update(id, updateCoffeeDto);
+    this.coffeeService.update(id, updateCoffeeDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.coffeeService.remove(id);
+    this.coffeeService.remove(id);
   }
 }
