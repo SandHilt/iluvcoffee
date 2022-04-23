@@ -4,15 +4,15 @@ import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Event {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  type: string;
+  type!: string;
 
   @Index()
   @Column()
-  name: string;
+  name!: string;
 
   @Column('json')
-  payload: Record<string, unknown>;
+  payload!: Record<string, unknown>;
 }

@@ -12,19 +12,19 @@ import { Flavor } from './flavor.entity';
 @Entity()
 export class Coffee {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Index()
   @Column()
-  name: string;
+  name!: string;
 
   @Column()
-  brand: string;
+  brand!: string;
 
   @Column({ default: 0 })
-  recommendations: number;
+  recommendations!: number;
 
   @JoinTable()
   @ManyToMany(() => Flavor, (flavor) => flavor.coffees, { cascade: true })
-  flavors: Flavor[];
+  flavors!: Flavor[];
 }
